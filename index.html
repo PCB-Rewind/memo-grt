@@ -9,36 +9,20 @@
 <title>Mémo GRT</title>
 <style>
   :root{
-    --bg:#faf6f0;
-    --surface:#ffffff;
-    --surface-2:#f3ece2;
-    --line:#e7ddd0;
-    --ink:#241c16;
-    --ink-soft:#6b5d50;
-    --ink-faint:#9a8c7d;
-    --rouille:#c8502d;
-    --rouille-soft:#fbe9e2;
-    --ambre:#e0962f;
-    --olive:#6f7d3f;
-    --navy:#2f4858;
+    --bg:#faf6f0;--surface:#ffffff;--surface-2:#f3ece2;--line:#e7ddd0;
+    --ink:#241c16;--ink-soft:#6b5d50;--ink-faint:#9a8c7d;
+    --rouille:#c8502d;--rouille-soft:#fbe9e2;--ambre:#e0962f;--olive:#6f7d3f;--navy:#2f4858;
     --cmo:#2a6fd0;--cfo:#6f7d3f;--cto:#e0962f;--coo:#6e56b0;--ceo:#c8502d;--neutre:#b3a596;
     --shadow:0 1px 2px rgba(60,40,20,.05),0 4px 16px rgba(60,40,20,.06);
-    --shadow-lg:0 8px 40px rgba(60,40,20,.14);
-    --r:14px;--r-sm:9px;
-    --gate-init:flex;
+    --shadow-lg:0 8px 40px rgba(60,40,20,.14);--r:14px;--r-sm:9px;--gate-init:flex;
   }
   html{color-scheme:light}
   *{box-sizing:border-box;margin:0;padding:0}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-  body{
-    background:var(--bg);color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,sans-serif;
-    line-height:1.5;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;
-  }
+  body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
   .wrap{max-width:680px;margin:0 auto;padding:0 16px}
   button{font-family:inherit;cursor:pointer}
 
-  /* ============ GATE (portail de connexion) ============ */
   #gate{position:fixed;inset:0;background:rgba(36,28,22,.45);backdrop-filter:blur(6px);z-index:100;display:var(--gate-init);align-items:center;justify-content:center;padding:20px}
   #gate.hidden{display:none}
   .gate-card{max-width:440px;width:100%;background:var(--surface);border-radius:var(--r);padding:30px;box-shadow:var(--shadow-lg)}
@@ -61,7 +45,6 @@
   .gate-help code{background:var(--surface-2);padding:2px 6px;border-radius:5px;font-size:12px;color:var(--rouille);font-family:ui-monospace,monospace}
   .gate-err{color:var(--rouille);font-size:13.5px;margin-top:12px;min-height:18px;font-weight:500}
 
-  /* ============ HEADER ============ */
   header.hero{padding:22px 0 8px}
   .brandrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
   .logo{width:42px;height:42px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow)}
@@ -70,14 +53,12 @@
   .brandtxt .sub{font-size:12.5px;color:var(--ink-faint);font-weight:500;margin-top:1px}
   .whoami{margin-left:auto;display:flex;align-items:center;gap:9px;background:var(--surface);padding:7px 12px;border-radius:30px;box-shadow:var(--shadow);font-size:13px}
   .syncdot{width:8px;height:8px;border-radius:50%;background:var(--olive);transition:background .2s}
-  .syncdot.busy{background:var(--ambre)}
-  .syncdot.busy{animation:blink 1s infinite}
+  .syncdot.busy{background:var(--ambre);animation:blink 1s infinite}
   .syncdot.err{background:var(--rouille)}
   @keyframes blink{50%{opacity:.25}}
   .whoami .chg{color:var(--ink-faint);border:none;background:none;padding:0 2px;font-size:12px}
   .whoami .chg:hover{color:var(--rouille)}
 
-  /* ============ ADD ============ */
   form.addbar{display:flex;gap:8px;margin:16px 0 10px;flex-wrap:wrap}
   .addbar input[type=text]{flex:1 1 220px;min-width:150px;background:var(--surface);border:1px solid var(--line);color:var(--ink);border-radius:var(--r-sm);padding:12px 13px;font-size:16px;outline:none}
   .addbar input[type=text]:focus{border-color:var(--rouille)}
@@ -87,7 +68,6 @@
   .add-btn:hover{filter:brightness(1.05)}
   button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
 
-  /* ============ TOOLBAR ============ */
   .toolbar{display:flex;justify-content:space-between;align-items:center;margin:6px 0 14px;gap:10px;flex-wrap:wrap}
   .filters{display:flex;gap:6px;flex-wrap:wrap}
   .chip{background:var(--surface);border:1px solid var(--line);color:var(--ink-soft);font-size:13px;padding:8px 14px;border-radius:30px;min-height:38px;font-weight:600}
@@ -98,7 +78,6 @@
   .counts{color:var(--ink-faint);font-size:13px;margin:4px 0 0}
   .counts b{color:var(--ink);font-weight:700}
 
-  /* ============ LIST ============ */
   ul{list-style:none}
   li{display:flex;align-items:flex-start;gap:12px;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--neutre);border-radius:var(--r);padding:13px;margin-bottom:9px;box-shadow:var(--shadow)}
   li.done{background:var(--surface-2);opacity:.7}
@@ -116,24 +95,21 @@
 
   .empty{text-align:center;color:var(--ink-faint);padding:38px 10px;font-size:15px;border:1px dashed var(--line);border-radius:var(--r)}
   footer{margin-top:26px;padding:18px 0 50px;color:var(--ink-faint);font-size:11.5px;text-align:center}
-
   .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);border:0}
 </style>
 </head>
 <body>
 <script>
-/* Anti-flash : si déjà connecté, on masque le portail avant le 1er rendu. */
 (function(){try{if(localStorage.getItem("grt_memo_cfg")){document.documentElement.style.setProperty("--gate-init","none");}}catch(e){}})();
 </script>
 
-<!-- PORTAIL -->
 <div id="gate">
   <div class="gate-card">
     <div class="kicker">Mémo GRT</div>
     <h2>On se connecte</h2>
     <p>Le seau partagé garde tes tâches synchronisées sur Mac, iPhone et Android. Le même Bin ID et la même Master Key sur chaque appareil, et tu retrouves la même liste partout.</p>
     <label for="in-bin">Bin ID (JSONBin)</label>
-    <input id="in-bin" placeholder="6a1b2c3d4e5f..." autocomplete="off" inputmode="text">
+    <input id="in-bin" placeholder="6a1b2c3d4e5f..." autocomplete="off">
     <label for="in-key">Master Key (X-Master-Key)</label>
     <input id="in-key" placeholder="$2a$10$..." autocomplete="off">
     <div class="gate-err" id="gate-err"></div>
@@ -176,11 +152,7 @@
     <label class="visually-hidden" for="cap">Casquette</label>
     <select id="cap" title="Casquette">
       <option value="neutre">Aucune</option>
-      <option value="cmo">CMO</option>
-      <option value="cfo">CFO</option>
-      <option value="cto">CTO</option>
-      <option value="coo">COO</option>
-      <option value="ceo">CEO</option>
+      <option value="cmo">CMO</option><option value="cfo">CFO</option><option value="cto">CTO</option><option value="coo">COO</option><option value="ceo">CEO</option>
     </select>
     <button type="submit" class="add-btn">Ajouter</button>
   </form>
@@ -202,84 +174,103 @@
 
 <script>
 (function(){
-  var CFG="grt_memo_cfg";
-  var CACHE="grt_memo_tasks_v3";
-  var API="https://api.jsonbin.io/v3/b/";
+  var CFG="grt_memo_cfg", CACHE="grt_memo_tasks_v4", API="https://api.jsonbin.io/v3/b/";
+  var TOMB_TTL=14*24*3600*1000; // purge des tâches supprimées après 14 jours
 
-  var cfg=null;
-  try{cfg=JSON.parse(localStorage.getItem(CFG)||"null");}catch(e){cfg=null;}
+  var cfg=null; try{cfg=JSON.parse(localStorage.getItem(CFG)||"null");}catch(e){cfg=null;}
   var tasks=loadCache();
   var filter="all", armed=false, armTimer=null, saveTimer=null;
 
   var $=function(s){return document.querySelector(s);};
   var listEl=$("#list"), emptyEl=$("#empty"), newEl=$("#new"), capEl=$("#cap"),
       countsEl=$("#counts"), footEl=$("#foot"), dot=$("#syncdot");
-
   var CAPS={neutre:"",cmo:"CMO",cfo:"CFO",cto:"CTO",coo:"COO",ceo:"CEO"};
   var HEX={neutre:"#b3a596",cmo:"#2a6fd0",cfo:"#6f7d3f",cto:"#e0962f",coo:"#6e56b0",ceo:"#c8502d"};
 
   function setDot(s){dot.className="syncdot"+(s?(" "+s):"");}
+  function now(){return Date.now();}
+  function stamp(t){return t.updated||t.created||0;}
 
-  /* ---- cache local (résilience hors ligne) ---- */
   function loadCache(){try{var r=localStorage.getItem(CACHE);return r?JSON.parse(r):[];}catch(e){return [];}}
   function saveCache(){try{localStorage.setItem(CACHE,JSON.stringify(tasks));}catch(e){}}
 
-  /* ---- JSONBin ---- */
+  /* ---- FUSION : union par id, on garde la version la plus récente (updated) ---- */
+  function merge(remote, local){
+    var map={};
+    function put(t){ if(!t||!t.id)return; var e=map[t.id]; if(!e||stamp(t)>=stamp(e)) map[t.id]=t; }
+    (remote||[]).forEach(put); (local||[]).forEach(put);
+    var arr=Object.keys(map).map(function(k){return map[k];});
+    // purge des tombstones anciens
+    var cut=now()-TOMB_TTL;
+    arr=arr.filter(function(t){return !(t.deleted && stamp(t)<cut);});
+    // tri : par date de création décroissante (récent en haut)
+    arr.sort(function(a,b){return (b.created||0)-(a.created||0);});
+    return arr;
+  }
+
   var api=function(){return API+cfg.bin;};
   var headers=function(){return {"Content-Type":"application/json","X-Master-Key":cfg.key,"X-Bin-Meta":"false"};};
+  function readRemote(){
+    return fetch(api()+"/latest",{headers:headers()}).then(function(r){
+      if(!r.ok)throw new Error(r.status); return r.json();
+    }).then(function(j){
+      var rec=(j&&j.record!==undefined)?j.record:j;
+      return (rec&&Array.isArray(rec.tasks))?rec.tasks:(Array.isArray(rec)?rec:[]);
+    });
+  }
 
   function pull(){
     if(!cfg) return Promise.resolve(false);
     setDot("busy");
-    return fetch(api()+"/latest",{headers:headers()})
-      .then(function(r){if(!r.ok)throw new Error(r.status);return r.json();})
-      .then(function(j){
-        var rec=(j&&j.record!==undefined)?j.record:j;
-        tasks=(rec&&Array.isArray(rec.tasks))?rec.tasks:(Array.isArray(rec)?rec:[]);
-        saveCache(); render(); setDot(""); return true;
-      })
-      .catch(function(e){setDot("err"); return false;});
+    return readRemote().then(function(remote){
+      tasks=merge(remote,tasks); saveCache(); render(); setDot(""); return true;
+    }).catch(function(){setDot("err"); return false;});
   }
   function push(){
     if(!cfg) return Promise.resolve(false);
     setDot("busy");
-    return fetch(api(),{method:"PUT",headers:headers(),body:JSON.stringify({tasks:tasks,updated:Date.now()})})
-      .then(function(r){if(!r.ok)throw new Error(r.status);setDot(""); return true;})
-      .catch(function(e){setDot("err"); return false;});
+    // on relit puis on fusionne AVANT d'écrire : on n'écrase jamais ce qui a changé ailleurs
+    return readRemote().then(function(remote){
+      tasks=merge(remote,tasks); saveCache();
+      return fetch(api(),{method:"PUT",headers:headers(),body:JSON.stringify({tasks:tasks,updated:now()})});
+    }).then(function(r){ if(!r.ok)throw new Error(r.status); setDot(""); render(); return true; })
+      .catch(function(){setDot("err"); return false;});
   }
   function queuePush(){saveCache();clearTimeout(saveTimer);saveTimer=setTimeout(push,600);}
 
-  /* ---- actions ---- */
   function uid(){return Date.now().toString(36)+Math.floor(Math.random()*1e5).toString(36);}
   function fmt(ts){var d=new Date(ts);return ("0"+d.getDate()).slice(-2)+"/"+("0"+(d.getMonth()+1)).slice(-2);}
 
   function add(text){
     text=(text||"").trim(); if(!text) return;
-    tasks.unshift({id:uid(),text:text,done:false,cap:capEl.value,created:Date.now()});
+    tasks.unshift({id:uid(),text:text,done:false,cap:capEl.value,created:now(),updated:now()});
     render(); queuePush();
   }
   function toggle(id){
     var t=tasks.find(function(x){return x.id===id;});
-    if(t){t.done=!t.done;t.doneAt=t.done?Date.now():null;render();queuePush();}
+    if(t){t.done=!t.done;t.doneAt=t.done?now():null;t.updated=now();render();queuePush();}
   }
-  function del(id){tasks=tasks.filter(function(x){return x.id!==id;});render();queuePush();}
+  function del(id){
+    var t=tasks.find(function(x){return x.id===id;});
+    if(t){t.deleted=true;t.updated=now();render();queuePush();}   // tombstone, pas de suppression brute
+  }
   function clearDone(){
     var btn=$("#clear");
     if(!armed){armed=true;btn.classList.add("armed");btn.textContent="Confirmer";armTimer=setTimeout(resetClear,3000);return;}
     clearTimeout(armTimer);
-    tasks=tasks.filter(function(x){return !x.done;});
+    tasks.forEach(function(t){if(t.done&&!t.deleted){t.deleted=true;t.updated=now();}});
     resetClear();render();queuePush();
   }
   function resetClear(){armed=false;var b=$("#clear");b.classList.remove("armed");b.textContent="Vider les tâches faites";}
-
   function escapeHtml(s){return s.replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 
   function render(){
-    var todo=tasks.filter(function(x){return !x.done;}).length;
-    var done=tasks.length-todo;
+    var live=tasks.filter(function(x){return !x.deleted;});
+    var todo=live.filter(function(x){return !x.done;}).length;
+    var done=live.length-todo;
     countsEl.innerHTML="<b>"+todo+"</b> à faire &middot; <b>"+done+"</b> faite"+(done>1?"s":"");
 
-    var shown=tasks.filter(function(x){
+    var shown=live.filter(function(x){
       if(filter==="todo")return !x.done;
       if(filter==="done")return x.done;
       return true;
@@ -288,41 +279,29 @@
     listEl.innerHTML="";
     if(shown.length===0){
       emptyEl.style.display="block";
-      emptyEl.textContent=tasks.length===0?"Rien pour l'instant. Ajoute ta première tâche au-dessus.":"Aucune tâche dans ce filtre.";
+      emptyEl.textContent=live.length===0?"Rien pour l'instant. Ajoute ta première tâche au-dessus.":"Aucune tâche dans ce filtre.";
     } else emptyEl.style.display="none";
 
     shown.forEach(function(t){
       var li=document.createElement("li");
       if(t.done)li.className="done";
       li.style.borderLeftColor=HEX[t.cap]||HEX.neutre;
-
       var box=document.createElement("button");
-      box.className="box";box.type="button";
-      box.setAttribute("role","checkbox");
+      box.className="box";box.type="button";box.setAttribute("role","checkbox");
       box.setAttribute("aria-checked",t.done?"true":"false");
       box.setAttribute("aria-label",(t.done?"Décocher : ":"Marquer comme fait : ")+t.text);
       box.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
       box.onclick=function(){toggle(t.id);};
-
-      var wrap=document.createElement("div");
-      wrap.className="txt";
+      var wrap=document.createElement("div");wrap.className="txt";
       var tag=CAPS[t.cap]?'<span class="cap-tag" style="background:'+HEX[t.cap]+'">'+CAPS[t.cap]+'</span>':'';
-      wrap.innerHTML='<span class="label">'+tag+escapeHtml(t.text)+'</span>'+
-        '<span class="meta">ajoutée le '+fmt(t.created)+(t.done&&t.doneAt?" &middot; faite le "+fmt(t.doneAt):"")+'</span>';
-
-      var d=document.createElement("button");
-      d.className="del";d.type="button";d.innerHTML="&times;";
-      d.setAttribute("aria-label","Supprimer : "+t.text);
-      d.onclick=function(){del(t.id);};
-
-      li.appendChild(box);li.appendChild(wrap);li.appendChild(d);
-      listEl.appendChild(li);
+      wrap.innerHTML='<span class="label">'+tag+escapeHtml(t.text)+'</span><span class="meta">ajoutée le '+fmt(t.created)+(t.done&&t.doneAt?" &middot; faite le "+fmt(t.doneAt):"")+'</span>';
+      var d=document.createElement("button");d.className="del";d.type="button";d.innerHTML="&times;";
+      d.setAttribute("aria-label","Supprimer : "+t.text);d.onclick=function(){del(t.id);};
+      li.appendChild(box);li.appendChild(wrap);li.appendChild(d);listEl.appendChild(li);
     });
-
-    footEl.innerHTML=(cfg?"Synchronisé via JSONBin":"Non connecté")+" &middot; "+tasks.length+" tâche"+(tasks.length>1?"s":"")+" au total";
+    footEl.innerHTML=(cfg?"Synchronisé via JSONBin":"Non connecté")+" &middot; "+live.length+" tâche"+(live.length>1?"s":"")+" au total";
   }
 
-  /* ---- portail ---- */
   function openGate(prefill){
     $("#gate").classList.remove("hidden");
     if(prefill&&cfg){$("#in-bin").value=cfg.bin;$("#in-key").value=cfg.key;}
@@ -332,51 +311,36 @@
     var bin=$("#in-bin").value.trim(), key=$("#in-key").value.trim();
     if(!bin||!key){$("#gate-err").textContent="Remplis les deux champs.";return;}
     $("#gate-err").textContent="Connexion...";
-    var old=cfg;
-    cfg={bin:bin,key:key};
+    var old=cfg; cfg={bin:bin,key:key};
     pull().then(function(ok){
       if(!ok){$("#gate-err").textContent="Échec. Vérifie le Bin ID et la Master Key.";cfg=old;return;}
       localStorage.setItem(CFG,JSON.stringify(cfg));
-      push();
-      $("#gate").classList.add("hidden");
-      boot();
+      $("#gate").classList.add("hidden"); boot();
     });
   };
   $("#me-change").onclick=function(){openGate(true);};
 
-  /* ---- listeners ---- */
   $("#form").addEventListener("submit",function(e){e.preventDefault();add(newEl.value);newEl.value="";newEl.focus();});
   $("#clear").onclick=clearDone;
   $("#filters").addEventListener("click",function(e){
     var b=e.target.closest(".chip"); if(!b)return;
     filter=b.getAttribute("data-f");
     Array.prototype.forEach.call(document.querySelectorAll(".chip"),function(c){c.classList.remove("on");c.setAttribute("aria-pressed","false");});
-    b.classList.add("on");b.setAttribute("aria-pressed","true");
-    render();
+    b.classList.add("on");b.setAttribute("aria-pressed","true"); render();
   });
   dot.parentNode.addEventListener("click",function(e){ if(e.target===dot && cfg) pull(); });
 
   var booted=false;
   function boot(){
-    render();
-    if(booted) return;
-    booted=true;
+    render(); if(booted) return; booted=true;
     document.addEventListener("visibilitychange",function(){if(!document.hidden)pull();});
     window.addEventListener("focus",function(){if(cfg)pull();});
-    setInterval(function(){if(!document.hidden&&cfg)pull();},20000);
+    setInterval(function(){if(!document.hidden&&cfg)pull();},15000);
     newEl.focus();
   }
 
-  /* ---- init ---- */
-  if(cfg){
-    $("#gate").classList.add("hidden");
-    render();      // affichage immédiat depuis le cache
-    boot();
-    pull();        // synchro en arrière-plan
-  } else {
-    render();
-    openGate(false);
-  }
+  if(cfg){ $("#gate").classList.add("hidden"); render(); boot(); pull(); }
+  else { render(); openGate(false); }
 })();
 </script>
 </body>
